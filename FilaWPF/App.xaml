@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:FilaWPF"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary Source="/Resources/Brushes.xaml"/>
     </Application.Resources>
 </Application>

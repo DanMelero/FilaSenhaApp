@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="FilaWPF.View.ChamadaSenhaView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FilaWPF.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width ="*"/>
+            <ColumnDefinition Width ="2.*"/>
+            <ColumnDefinition Width ="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Background="{StaticResource BodyBackgroundBrush}">
+            <StackPanel VerticalAlignment="Center" Background="{StaticResource BodyTamanhoDaFilaBrush}">
+                <TextBlock Text="Tamanho da Fila" FontSize="18" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Top"/>
+                <TextBlock Text="{Binding TamanhoFila}" FontSize="18" FontWeight="Medium" TextAlignment="Center" VerticalAlignment="Top"/>
+            </StackPanel>
+        </Grid>
+        <Grid Background="AliceBlue" Grid.Column="1" VerticalAlignment="Stretch" >
+            <StackPanel VerticalAlignment="Top" >
+                <TextBlock Text="Chamando Senha" FontSize="30" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center" Padding ="20" Margin="10 20"/>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Center" >
+                <TextBlock x:Name ="txtSenha" Text ="{Binding SenhaChamada}" FontSize="30" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center" Background="{StaticResource BodyTextBoxSenha}" Padding ="20" Margin="10"/>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Bottom" >
+                <Button x:Name="btnSenha" Command="{Binding AtivarProxSenhaCommand}" Content="Chamar Próxima Senha" FontWeight="DemiBold" VerticalAlignment="Bottom" Margin="10 50" Padding ="10" Background="LightSlateGray" Foreground="White"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Background="{StaticResource BodyBackgroundBrush}" Grid.Column="2" VerticalAlignment="Stretch">
+            <StackPanel VerticalAlignment="Center" Background="{StaticResource BodyProximaFilaBrush}">
+                <TextBlock Text="Próxima Senha" FontSize="18" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Top"/>
+                <TextBlock Text="{Binding ProximaSenha}" FontSize="18" FontWeight="Medium" TextAlignment="Center" VerticalAlignment="Top"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+
+</UserControl>
