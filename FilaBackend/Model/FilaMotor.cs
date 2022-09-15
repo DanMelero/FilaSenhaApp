@@ -6,7 +6,6 @@ namespace FilaBackend.Model
     {
         public PriorityQueue<Senha, double> Fila { get; set; } = new();
 
-        private int _totalFila = 1;
         private readonly Ordenador _ord;
 
         public FilaMotor()
@@ -16,7 +15,7 @@ namespace FilaBackend.Model
 
         public void InserirSenhaNaFila(Senha senha)
         {
-            senha.Numero = _totalFila++;
+            senha.Numero = _ord.NumerarSenhas(senha, 1);
             _ord.AplicarFatorCorrecao(senha);
             Fila.Enqueue(senha, senha.Prioridade);
         }
@@ -25,7 +24,7 @@ namespace FilaBackend.Model
         {
             foreach (var item in senhas)
             {
-                item.Numero = _totalFila++;
+                item.Numero = _ord.NumerarSenhas(item, 1);
                 _ord.AplicarFatorCorrecao(item);
                 Fila.Enqueue(item, item.Prioridade);
             }

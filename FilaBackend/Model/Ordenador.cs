@@ -10,6 +10,8 @@ namespace FilaBackend.Model
     {
         private readonly PriorityQueue<Senha, double> _fila;
 
+        public Dictionary<string, int> ContTipos { get; set; } = new();
+
         public Ordenador(PriorityQueue<Senha, double> fila)
         {
             _fila = fila;
@@ -19,6 +21,20 @@ namespace FilaBackend.Model
         {
             s.FatorCorrecao = (double)_fila.UnorderedItems.Count(t => t.Element.GetType().Name == s.GetType().Name) / _fila.Count;
             s.CorrigirPrioridade();
+        }
+
+        public int NumerarSenhas (Senha s, int valorInicial)
+        {
+            string tipoSenha = s.GetType().Name;
+            if (ContTipos.ContainsKey(tipoSenha))
+            {
+                ContTipos[tipoSenha]++;
+            }
+            else
+            {
+                ContTipos.Add(tipoSenha, valorInicial++);
+            }
+            return ContTipos[tipoSenha];
         }
     }
 }
