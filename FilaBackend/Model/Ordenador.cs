@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FilaBackend.Model
+﻿namespace FilaBackend.Model
 {
     public class Ordenador
     {
@@ -17,22 +11,24 @@ namespace FilaBackend.Model
             _fila = fila;
         }
 
-        public void AplicarFatorCorrecao(Senha s)
-        {
-            s.FatorCorrecao = (double)_fila.UnorderedItems.Count(t => t.Element.GetType().Name == s.GetType().Name) / _fila.Count;
-            s.CorrigirPrioridade();
-        }
+        //public void AplicarFatorCorrecao(Senha senhaParaCorrecao, int numPessoasNaFila)
+        //{
+        //    if (_fila.Count >= numPessoasNaFila)
+        //    {
+        //        var prioridadeCorrigida = ContTipos.ContainsKey(senhaParaCorrecao.GetType().Name) ? (double)_fila.UnorderedItems.Count(t => t.Element.GetType().Name == senhaParaCorrecao.GetType().Name) / _fila.Count : 1;
+        //    }
+        //}
 
-        public int NumerarSenhas (Senha s, int valorInicial)
+        public int NumerarSenhas (Senha senhaParaSerNumerada, int numInicial)
         {
-            string tipoSenha = s.GetType().Name;
+            string tipoSenha = senhaParaSerNumerada.GetType().Name;
             if (ContTipos.ContainsKey(tipoSenha))
             {
-                ContTipos[tipoSenha]++;
+                ++ContTipos[tipoSenha];
             }
             else
             {
-                ContTipos.Add(tipoSenha, valorInicial++);
+                ContTipos.Add(tipoSenha, numInicial++);
             }
             return ContTipos[tipoSenha];
         }

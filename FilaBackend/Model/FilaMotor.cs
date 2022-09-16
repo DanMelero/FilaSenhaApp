@@ -15,18 +15,18 @@ namespace FilaBackend.Model
 
         public void InserirSenhaNaFila(Senha senha)
         {
-            senha.Numero = _ord.NumerarSenhas(senha, 1);
-            _ord.AplicarFatorCorrecao(senha);
+            senha.Numero = _ord.NumerarSenhas(senhaParaSerNumerada: senha, numInicial: 1); ;
+            //_ord.AplicarFatorCorrecao(senhaParaCorrecao: senha, numPessoasNaFila: 20);
             Fila.Enqueue(senha, senha.Prioridade);
         }
 
         public void InserirSenhaNaFila(params Senha[] senhas)
         {
-            foreach (var item in senhas)
+            foreach (var senha in senhas)
             {
-                item.Numero = _ord.NumerarSenhas(item, 1);
-                _ord.AplicarFatorCorrecao(item);
-                Fila.Enqueue(item, item.Prioridade);
+                senha.Numero = _ord.NumerarSenhas(senhaParaSerNumerada: senha, numInicial: 1);
+                //_ord.AplicarFatorCorrecao(senhaParaCorrecao: senha, numPessoasNaFila: 20);
+                Fila.Enqueue(senha, senha.Prioridade);
             }
         }
 
