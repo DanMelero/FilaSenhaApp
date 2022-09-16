@@ -25,7 +25,7 @@ namespace FilaBackend.Model
             foreach (var senha in senhas)
             {
                 senha.Numero = _ord.NumerarSenhas(senhaParaSerNumerada: senha, numInicial: 1);
-                //_ord.AplicarFatorCorrecao(senhaParaCorrecao: senha, numPessoasNaFila: 20);
+                _ord.AplicarFatorCorrecao(senhaParaCorrecao: senha, totalSenhasFila: 15);
                 Fila.Enqueue(senha, senha.Prioridade);
             }
         }

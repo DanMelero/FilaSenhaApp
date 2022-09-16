@@ -11,15 +11,13 @@
             _fila = fila;
         }
 
-        //public void AplicarFatorCorrecao(Senha senhaParaCorrecao, int numPessoasNaFila)
-        //{
-        //    if (_fila.Count >= numPessoasNaFila)
-        //    {
-        //        var prioridadeCorrigida = ContTipos.ContainsKey(senhaParaCorrecao.GetType().Name) ? (double)_fila.UnorderedItems.Count(t => t.Element.GetType().Name == senhaParaCorrecao.GetType().Name) / _fila.Count : 1;
-        //    }
-        //}
+        public void AplicarFatorCorrecao(Senha senhaParaCorrecao, int totalSenhasFila)
+        {
+            var correcao = _fila.Count >= totalSenhasFila ? (double)_fila.UnorderedItems.Count(t => t.Element.GetType().Name == senhaParaCorrecao.GetType().Name) / _fila.Count : 1;
+            senhaParaCorrecao.Prioridade = correcao >= 0.8 ? senhaParaCorrecao.Prioridade *= 1.00002 : 1;
+        }
 
-        public int NumerarSenhas (Senha senhaParaSerNumerada, int numInicial)
+        public int NumerarSenhas(Senha senhaParaSerNumerada, int numInicial)
         {
             string tipoSenha = senhaParaSerNumerada.GetType().Name;
             if (ContTipos.ContainsKey(tipoSenha))
