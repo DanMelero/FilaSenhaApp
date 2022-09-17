@@ -4,11 +4,11 @@
     {
         public char Sigla { get; set; }
         public int Numero { get; set; }
-        public double Prioridade { get; set; }
+        public long Prioridade { get; set; }
 
         public Senha()
         {
-            Prioridade = DateTime.Now.ToOADate();
+            Prioridade = DateTime.Now.Ticks;
             Thread.Sleep(10);
         }
 

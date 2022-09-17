@@ -5,7 +5,7 @@
         public Preferencial()
         {
             Sigla = 'P';
-            Prioridade *= 0.99999;
+            Prioridade--;
         }
     }
 }
