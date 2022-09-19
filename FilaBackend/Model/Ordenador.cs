@@ -15,7 +15,7 @@
         {
             var tipoSenha = senhaParaCorrecao.GetType().Name;
             var correcao = _fila.Count >= totalSenhasFila ? (double)_fila.UnorderedItems.Count(t => t.Element.GetType().Name == tipoSenha) / _fila.Count : 1;
-            return correcao >= 0.8  ? senhaParaCorrecao.Prioridade-- : senhaParaCorrecao.Prioridade;
+            return correcao >= 0.8 ? senhaParaCorrecao.Prioridade / 2 : senhaParaCorrecao.Prioridade;
         }
 
         public int NumerarSenhas(Senha senhaParaSerNumerada, int numInicial)
