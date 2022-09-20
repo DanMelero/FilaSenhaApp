@@ -13,9 +13,9 @@ namespace FilaBackend.Model
             _ord = new(Fila);
         }
 
-        public void InserirSenhaNaFila(Senha senha)
+        public string InserirSenhaNaFila(Senha senha)
         {
-            AplicarOrdenacao(senha);
+            return AplicarOrdenacao(senha);
         }
 
         public void InserirSenhaNaFila(params Senha[] senhas)
@@ -41,10 +41,11 @@ namespace FilaBackend.Model
             return Fila.Count > 0 ? Fila.Count : 0;
         }
 
-        private void AplicarOrdenacao(Senha senha)
+        private string AplicarOrdenacao(Senha senha)
         {
             senha.Numero = _ord.NumerarSenhas(senhaParaSerNumerada: senha, numInicial: 1);
             Fila.Enqueue(senha, _ord.AplicarFatorCorrecao(senhaParaCorrecao: senha, totalSenhasFila: 15));
+            return senha.ToString();
         }
     }
 }

@@ -13,12 +13,9 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="4*"/>
+            <RowDefinition Height="6*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBlock Text="Retire aqui sua senha" Foreground="White" FontSize="40" FontWeight="DemiBold"/>
-        </StackPanel>
         <Grid Grid.Row="1" Grid.Column="1" Background="{StaticResource RetiradaBackgroundStack}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="4*"/>
@@ -29,16 +26,16 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.ColumnSpan="2" HorizontalAlignment ="Center" Orientation="Horizontal">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="R10" TextAlignment="Center" FontSize="50" Background="{StaticResource RetiradaBackgroundTextBox}" Foreground="{StaticResource RetiradaForegroundTextBox}" Padding="100 20"/>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding SenhaRetirada}" TextAlignment="Center" FontSize="50" Background="{StaticResource RetiradaBackgroundTextBox}" Foreground="{StaticResource RetiradaForegroundTextBox}" Padding="100 20"/>
             </StackPanel>
             <StackPanel Grid.Row="1">
-                <Button x:Name="btnSenhaRegular" VerticalAlignment="Center" HorizontalAlignment="Center"  Background="{StaticResource RetiradaBackgroundButtonRegular}" Margin="10" Padding="35 8">
+                <Button x:Name="btnSenhaRegular" Command= "{Binding RetirarRegularCommand}" VerticalAlignment="Center" HorizontalAlignment="Center"  Background="{StaticResource RetiradaBackgroundButtonRegular}" Margin="10" Padding="35 8">
                     <TextBlock Text="Regular" Foreground="{StaticResource RetiradaForegroundButtonRegular}" FontSize="20" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Yu Gothic UI Semibold"/>
                 </Button>
             </StackPanel>
                 
             <StackPanel Grid.Row="1" Grid.Column="1">
-                <Button x:Name="btnSenhaPreferencial"  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10" Padding="20 8">
+                <Button x:Name="btnSenhaPreferencial" Command= "{Binding RetirarPreferencialCommand}" Background="{StaticResource RetiradaBackgroundButtonPreferencial}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10" Padding="20 8">
                     <TextBlock Text="Preferencial" Foreground="{StaticResource RetiradaForegroundButtonPreferencial}" FontSize="20"  FontWeight ="DemiBold" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Yu Gothic UI Semibold"/>
                 </Button>
             </StackPanel>

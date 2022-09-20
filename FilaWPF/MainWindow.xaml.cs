@@ -9,12 +9,13 @@ namespace FilaWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly ChamadaSenhaViewModel _viewModel;
+        //private readonly ChamadaSenhaViewModel _viewModel;
+        private readonly RetiradaSenhaViewModel _viewModel;
 
         public MainWindow()
         {
             InitializeComponent();
-            _viewModel = new ChamadaSenhaViewModel(new FilaMotor());
+            _viewModel = new RetiradaSenhaViewModel(new FilaMotor());
             DataContext = _viewModel;
         }
     }

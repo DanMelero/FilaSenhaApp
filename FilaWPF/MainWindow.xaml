@@ -11,7 +11,7 @@
         <!--Definitions-->
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="5*"/>
+            <RowDefinition Height="20*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -19,9 +19,9 @@
         </Grid.ColumnDefinitions>
 
         <!--Header-->
-        <controls:HeaderControl Grid.Row="0" Grid.ColumnSpan="3"/>
+        <!--<controls:HeaderControl Grid.Row="0" Grid.ColumnSpan="3"/>-->
 
         <!--Body-->
-        <view:ChamadaSenhaView Grid.Row="1"/>
+        <view:RetiradaSenhaView Grid.Row="1"/>
     </Grid>
 </Window>

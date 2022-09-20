@@ -2,7 +2,6 @@
 using CommunityToolkit.Mvvm.Input;
 using FilaBackend.Interfaces;
 using FilaBackend.Model;
-using System.Threading;
 
 namespace FilaWPF.ViewModel
 {
@@ -12,7 +11,6 @@ namespace FilaWPF.ViewModel
 
         public ChamadaSenhaViewModel(IFila fila)
         {
-            fila.InserirSenhaNaFila(new Preferencial(), new Preferencial(), new Preferencial(), new Preferencial(),  new Preferencial(), new Preferencial(), new Preferencial(), new Preferencial(), new Preferencial(), new Regular(), new Regular(), new Preferencial(), new Preferencial(), new Regular(), new Preferencial(), new Preferencial());
             _fila = fila;
             _senhaChamada = SenhaChamada;
         }
