@@ -4,24 +4,43 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:view="clr-namespace:FilaWPF.View" 
+        xmlns:viewModel="clr-namespace:FilaWPF.ViewModel" 
         xmlns:controls="clr-namespace:FilaWPF.Controls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Margin="5 0">
+        Title="MainWindow" Height="530" Width="800">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewModel:ChamadaSenhaViewModel}">
+            <view:ChamadaSenhaView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:RetiradaSenhaViewModel}">
+            <view:RetiradaSenhaView/>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid Margin="3 0">
         <!--Definitions-->
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="20*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
 
         <!--Header-->
-        <!--<controls:HeaderControl Grid.Row="0" Grid.ColumnSpan="3"/>-->
-
+        <controls:HeaderControl Grid.Row="0"/>
+        <!--Menu-->
+        <Menu  Background="#FF898580" Grid.Row="1">
+            <MenuItem Header="_Menu" FontSize="17" FontWeight="DemiBold" Padding="20 0" Foreground="#FF4A4A49" BorderThickness="2" Margin= "2 0" Background="#FFF9F8F8">
+                <MenuItem
+                        Header="_Chamada"
+                        Command ="{Binding SelectViewModelCommand}"
+                        CommandParameter="{Binding ChamadaSenhaViewModel}"/>
+                <MenuItem
+                        Header = "_Retirada"
+                        Command = "{Binding SelectViewModelCommand}"
+                        CommandParameter = "{Binding RetiradaSenhaViewModel}"/>
+                <!--<Button x:Name="-->
+            </MenuItem>
+        </Menu>
         <!--Body-->
-        <view:RetiradaSenhaView Grid.Row="1"/>
+        <ContentControl Grid.Row="2" Content="{Binding SelectedViewModel}"/>
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
-﻿using FilaBackend.Model;
+﻿using FilaBackend.Interfaces;
+using FilaBackend.Model;
 using FilaWPF.ViewModel;
 using System.Windows;
 
@@ -9,13 +10,14 @@ namespace FilaWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        //private readonly ChamadaSenhaViewModel _viewModel;
-        private readonly RetiradaSenhaViewModel _viewModel;
+        private readonly MainViewModel _viewModel;
+        private readonly IFila _fila;
 
         public MainWindow()
         {
+            _fila = new FilaMotor();
             InitializeComponent();
-            _viewModel = new RetiradaSenhaViewModel(new FilaMotor());
+            _viewModel = new MainViewModel(new ChamadaSenhaViewModel(_fila), new RetiradaSenhaViewModel(_fila));
             DataContext = _viewModel;
         }
     }

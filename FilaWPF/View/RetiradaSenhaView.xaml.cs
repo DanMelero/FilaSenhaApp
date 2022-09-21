@@ -7,7 +7,6 @@ namespace FilaWPF.View
     /// </summary>
     public partial class RetiradaSenhaView : UserControl
     {
-
         public RetiradaSenhaView()
         {
             InitializeComponent();
