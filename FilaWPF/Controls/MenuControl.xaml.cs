@@ -11,5 +11,10 @@ namespace FilaWPF.Controls
         {
             InitializeComponent();
         }
+
+        private void MenuItem_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+
+        }
     }
 }
