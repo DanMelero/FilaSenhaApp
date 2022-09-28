@@ -1,14 +1,21 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <SolidColorBrush x:Key="AzulMarinhoEscuro" Color="#282840" />
-    <SolidColorBrush x:Key="AzulMarinhoEscuroTransparente" Color="#DD282840" />
+    <SolidColorBrush x:Key="AzulMarinhoEscuroTransparente" Color="#AA282840" />
     <SolidColorBrush x:Key="AmareloEscuro" Color="#FFBD68"/>
     <SolidColorBrush x:Key="Branco" Color="#FFFFFF"/>
     <SolidColorBrush x:Key="VermelhoCarmim" Color="#E8608C"/>
     <SolidColorBrush x:Key="Vermelho" Color="#E6473F"/>
     <SolidColorBrush x:Key="VermelhoEscuro" Color="#BB223D"/>
     <SolidColorBrush x:Key="VerdeAquamarine" Color="#71CBC4"/>
-    <SolidColorBrush x:Key="Lilas" Color="#EE615CF2"/>
+    <SolidColorBrush x:Key="Lilas" Color="#FF615CF2"/>
     <SolidColorBrush x:Key="VerdeMusgo" Color="#CDD56E"/>
     <SolidColorBrush x:Key="AzulMarinhoPiscina" Color="#2668A6"/>
+    <SolidColorBrush x:Key="AzulMarinhoPiscinaTransparente" Color="#BB2668A6"/>
+    <LinearGradientBrush x:Key="GradienteAzuleBranco" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#884A479A"/>
+        <GradientStop Color="#88615CF2"/>
+        <GradientStop Color="#EE615CF2"/>
+        <GradientStop Color="White" Offset="1"/>
+    </LinearGradientBrush>
 </ResourceDictionary>
