@@ -15,7 +15,7 @@
             <Border Style="{StaticResource BorderSideStyle}">
                 <StackPanel Style="{StaticResource StackPanelBkgSide}">
                     <TextBlock Text="Tamanho da fila"  Style="{StaticResource TextBkgSideStyle}" Foreground="{StaticResource VermelhoCarmim}" Margin="0 0 0 30" VerticalAlignment="Top" FontSize="35"/>
-                    <TextBlock Text="15" Style="{StaticResource TextBkgSideStyle}" Foreground="{StaticResource VermelhoCarmim}"  FontWeight="DemiBold"/>
+                    <TextBlock Text="{Binding TamanhoFila}" Style="{StaticResource TextBkgSideStyle}" Foreground="{StaticResource VermelhoCarmim}"  FontWeight="DemiBold"/>
                     <!--<TextBlock Text="{Binding TamanhoFila}"Style="{StaticResource TextBkgSideStyle}"/>-->
                 </StackPanel>
             </Border>
@@ -30,9 +30,8 @@
             </Image>
             <Border Style="{StaticResource BorderBaseStyle}" Background="{StaticResource AzulMarinhoEscuroTransparente}" Margin="30 300">
                 <StackPanel VerticalAlignment="Center"  Margin="50 0 50 0">
-                    <TextBlock Text="Chamando Senha:" Style="{StaticResource TextBkgCentralChamadaStyle}" Foreground="{StaticResource VerdeAquamarine}"/>
-                    <TextBlock x:Name ="txtSenha" Text ="R25" Style="{StaticResource TextBkgCentralChamadaStyle}" Foreground="{StaticResource Branco}" FontSize="100" FontWeight="Bold"/>
-                    <!--<TextBlock x:Name ="txtSenha" Text ="{Binding SenhaChamada}" Style="{StaticResource TextBkgCentralStyle}" Foreground="{StaticResource Branco}"/>-->
+                    <TextBlock Text="Chamando Senha:" Style="{StaticResource TextBkgCentralStyle}" Foreground="{StaticResource VerdeAquamarine}"/>
+                    <TextBlock x:Name ="txtSenha" Text ="{Binding SenhaChamada}" Style="{StaticResource TextBkgCentralStyle}" Foreground="{StaticResource Branco}" FontSize="100" FontWeight="Bold"/>
                 </StackPanel>
             </Border>
 
@@ -47,7 +46,7 @@
             <Border Style="{StaticResource BorderSideStyle}">
                 <StackPanel Style="{StaticResource StackPanelBkgSide}">
                     <TextBlock Style="{StaticResource TextBkgSideStyle}" VerticalAlignment="Top" Foreground="{StaticResource VerdeMusgo}" Text="Próxima Senha" FontSize="35" Margin="0 0 0 30"/>
-                    <TextBlock Text="R32" Style="{StaticResource TextBkgSideStyle}" VerticalAlignment="Center" Foreground="{StaticResource VerdeMusgo}" FontWeight="DemiBold"/>
+                    <TextBlock Text="{Binding ProximaSenha}" Style="{StaticResource TextBkgSideStyle}" VerticalAlignment="Center" Foreground="{StaticResource VerdeMusgo}" FontWeight="DemiBold"/>
                     <!--<TextBlock Text="{Binding TamanhoFila}" Style="{StaticResource TextBkgSideStyle}"/>-->
                 </StackPanel>
             </Border>

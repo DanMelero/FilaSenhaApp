@@ -8,20 +8,14 @@
     <Border Style="{StaticResource BorderBaseStyle}" Background="{StaticResource AzulMarinhoEscuro}">
         <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" ClipToBounds="True">
             <Menu>
-                <Border Style="{StaticResource BorderMenuItemStyle}" Margin="5 0 0 0">
-                    <MenuItem Style="{StaticResource MenuItemStyle}" Header="_Menu">
-                        <MenuItem Header="_Chamada" Command="{Binding SelectedViewModel}"/>
-                        <MenuItem Header="_Retirada" Command="{Binding SelectedViewModel}"/>
+                <MenuItem Header="_Menu" Style="{StaticResource MenuItemStyle}" Background="{StaticResource Vermelho}" Margin="10 0 0 0">
+                        <MenuItem Header="_Retirada" Command="{Binding SelectViewModelCommand}" CommandParameter="{Binding RetiradaSenhaViewModel}" FontSize="15"/>
+                    <MenuItem Header="_Chamada" Command="{Binding SelectViewModelCommand}" CommandParameter="{Binding ChamadaSenhaViewModel}" FontSize="15"/>
                     </MenuItem>
-                </Border>
             </Menu>
             <Menu VerticalAlignment="Center" HorizontalAlignment="Right">
-                <Border Style="{StaticResource BorderMenuItemStyle}" Background="{StaticResource VermelhoEscuro}" Margin="0 0 5 0">
-                    <MenuItem Header="_Configurações" Style="{StaticResource MenuItemStyle}" />
-                </Border>
+                <MenuItem Header="_Configurações" Style="{StaticResource MenuItemStyle}" Background="{StaticResource VermelhoEscuro}" Margin="0 0 10 0"/>
             </Menu>
         </Grid>
     </Border>
-
 </UserControl>
-<!--Header="_Menu" Background="#EEE03C3C" Foreground="White" Padding="10,2,10,2" VerticalAlignment="Center" FontFamily="Roboto" FontSize="20" FontWeight="Bold"-->

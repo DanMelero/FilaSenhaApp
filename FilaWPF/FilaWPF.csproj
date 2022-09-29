@@ -8,19 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="View\BackgroundIllustration.png" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\FilaBackend\FilaBackend.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="View\BackgroundIllustration.png" />
   </ItemGroup>
 
   <ItemGroup>
