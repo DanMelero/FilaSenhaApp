@@ -16,7 +16,6 @@
                 <StackPanel Style="{StaticResource StackPanelBkgSide}">
                     <TextBlock Text="Tamanho da fila"  Style="{StaticResource TextBkgSideStyle}" Foreground="{StaticResource VermelhoCarmim}" Margin="0 0 0 30" VerticalAlignment="Top" FontSize="35"/>
                     <TextBlock Text="{Binding TamanhoFila}" Style="{StaticResource TextBkgSideStyle}" Foreground="{StaticResource VermelhoCarmim}"  FontWeight="DemiBold"/>
-                    <!--<TextBlock Text="{Binding TamanhoFila}"Style="{StaticResource TextBkgSideStyle}"/>-->
                 </StackPanel>
             </Border>
            
