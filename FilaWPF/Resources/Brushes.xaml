@@ -1,19 +1,21 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <SolidColorBrush x:Key="HeaderBrush" Color="#9AF5C4"/>
-    <SolidColorBrush x:Key="BodyTamanhoDaFilaBrush" Color="#ABA0A083"/>
-    <SolidColorBrush x:Key="BodyProximaFilaBrush" Color="#7A4D6A6D"/>
-    <SolidColorBrush x:Key="BodyBackgroundBrush" Color="DarkSalmon"/>
-    <SolidColorBrush x:Key="BodyTextBoxSenha" Color="Bisque"/>
-    <SolidColorBrush x:Key="RetiradaBackgroundGrid" Color="#5178A8"/>
-    <SolidColorBrush x:Key="RetiradaBackgroundStack" Color="#EDCB96"/>
-    <SolidColorBrush x:Key="RetiradaBackgroundTextBox" Color="#F5B68E"/>
-    <SolidColorBrush x:Key="RetiradaForegroundTextBox" Color="#4D4861"/>
-    <SolidColorBrush x:Key="RetiradaBackgroundButtonRegular" Color="#615851"/>
-    <SolidColorBrush x:Key="RetiradaBackgroundButtonPreferencial" Color="#8090AD"/>
-    <SolidColorBrush x:Key="RetiradaForegroundButtonRegular" Color="Salmon"/>
-    <SolidColorBrush x:Key="RetiradaForegroundButtonPreferencial" Color="#FAF0A0"/>
-    <SolidColorBrush x:Key="MenuBackground" Color="#FF898580"/>
-    <SolidColorBrush x:Key="MenuItemBackground" Color="#FFF9F8F8"/>
-    <SolidColorBrush x:Key="ConfigButtonBackground" Color="#82B5F5"/>
+    <SolidColorBrush x:Key="AzulMarinhoEscuro" Color="#282840" />
+    <SolidColorBrush x:Key="AzulMarinhoEscuroTransparente" Color="#AA282840" />
+    <SolidColorBrush x:Key="AmareloEscuro" Color="#FFBD68"/>
+    <SolidColorBrush x:Key="Branco" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="VermelhoCarmim" Color="#E8608C"/>
+    <SolidColorBrush x:Key="Vermelho" Color="#E6473F"/>
+    <SolidColorBrush x:Key="VermelhoEscuro" Color="#BB223D"/>
+    <SolidColorBrush x:Key="VerdeAquamarine" Color="#71CBC4"/>
+    <SolidColorBrush x:Key="Lilas" Color="#FF615CF2"/>
+    <SolidColorBrush x:Key="VerdeMusgo" Color="#CDD56E"/>
+    <SolidColorBrush x:Key="AzulMarinhoPiscina" Color="#2668A6"/>
+    <SolidColorBrush x:Key="AzulMarinhoPiscinaTransparente" Color="#BB2668A6"/>
+    <LinearGradientBrush x:Key="GradienteAzuleBranco" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#884A479A"/>
+        <GradientStop Color="#88615CF2"/>
+        <GradientStop Color="#EE615CF2"/>
+        <GradientStop Color="White" Offset="1"/>
+    </LinearGradientBrush>
 </ResourceDictionary>

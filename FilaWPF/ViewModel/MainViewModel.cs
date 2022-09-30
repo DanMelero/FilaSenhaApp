@@ -1,15 +1,17 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using FilaWPF.Controls;
 using System.Threading.Tasks;
 
 namespace FilaWPF.ViewModel
 {
     public partial class MainViewModel : ObservableObject
     {
-        public MainViewModel(ChamadaSenhaViewModel chamadaSenhaViewModel, RetiradaSenhaViewModel retiradaSenhaViewModel)
+        public MainViewModel(ChamadaSenhaViewModel chamadaSenhaViewModel, RetiradaSenhaViewModel retiradaSenhaViewModel, MenuControl menuControl)
         {
             ChamadaSenhaViewModel = chamadaSenhaViewModel;
             RetiradaSenhaViewModel = retiradaSenhaViewModel;
+            MenuControl = menuControl;
             SelectedViewModel = RetiradaSenhaViewModel;
         }
 
@@ -21,6 +23,9 @@ namespace FilaWPF.ViewModel
 
         [ObservableProperty]
         private RetiradaSenhaViewModel? _retiradaSenhaViewModel;
+
+        [ObservableProperty]
+        private MenuControl? _menuControl;
 
         [RelayCommand]
         private void SelectViewModel(object? parameter)

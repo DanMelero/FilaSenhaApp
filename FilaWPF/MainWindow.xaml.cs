@@ -17,7 +17,7 @@ namespace FilaWPF
         {
             _fila = new FilaMotor();
             InitializeComponent();
-            _viewModel = new MainViewModel(new ChamadaSenhaViewModel(_fila), new RetiradaSenhaViewModel(_fila));
+            _viewModel = new MainViewModel(new ChamadaSenhaViewModel(_fila), new RetiradaSenhaViewModel(_fila), new Controls.MenuControl());
             DataContext = _viewModel;
         }
     }
