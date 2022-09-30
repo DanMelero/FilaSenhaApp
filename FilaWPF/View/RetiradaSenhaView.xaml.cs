@@ -1,6 +1,4 @@
-﻿using FilaWPF.Resources;
-using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 
 namespace FilaWPF.View
 {
