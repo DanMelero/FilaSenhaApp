@@ -12,12 +12,13 @@ namespace FilaWPF
     {
         private readonly MainViewModel _viewModel;
         private readonly IFila _fila;
-
+        private readonly IConfiguracao _configuracao;
         public MainWindow()
         {
-            _fila = new FilaMotor();
+            _configuracao = new Configuracao();
+            _fila = new FilaMotor(_configuracao);
             InitializeComponent();
-            _viewModel = new MainViewModel(new ChamadaSenhaViewModel(_fila), new RetiradaSenhaViewModel(_fila), new Controls.MenuControl());
+            _viewModel = new MainViewModel(new ChamadaSenhaViewModel(_fila), new RetiradaSenhaViewModel(_fila), new Controls.MenuControl(), new ConfiguracaoViewModel(_configuracao));
             DataContext = _viewModel;
         }
     }

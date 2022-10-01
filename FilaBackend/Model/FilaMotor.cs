@@ -8,21 +8,21 @@ namespace FilaBackend.Model
 
         private readonly Ordenador _ord;
 
-        public FilaMotor()
+        public FilaMotor(IConfiguracao configuracao)
         {
-            _ord = new(Fila);
+            _ord = new(Fila, configuracao);
         }
 
         public string InserirSenhaNaFila(Senha senha)
         {
-            return AplicarOrdenacao(senha);
+            return _ord.AplicarOrdenacao(senha);
         }
 
         public void InserirSenhaNaFila(params Senha[] senhas)
         {
             foreach (var senha in senhas)
             {
-                AplicarOrdenacao(senha);
+               _ord.AplicarOrdenacao(senha);
             }
         }
 
@@ -39,13 +39,6 @@ namespace FilaBackend.Model
         public int MostrarTamanhoDaFila()
         {
             return Fila.Count > 0 ? Fila.Count : 0;
-        }
-
-        private string AplicarOrdenacao(Senha senha)
-        {
-            senha.Numero = _ord.NumerarSenhas(senhaParaSerNumerada: senha, numInicial: 1);
-            Fila.Enqueue(senha, _ord.AplicarFatorCorrecao(senhaParaCorrecao: senha, totalSenhasFila: 15));
-            return senha.ToString();
         }
     }
 }

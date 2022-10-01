@@ -39,7 +39,6 @@
     </Style>
     <!--#endregion-->
 
-
     <!--#region TextBlocks -->
     <Style x:Key="TextBkgSideStyle" TargetType="TextBlock">
         <Setter Property="FontFamily" Value="Inter"/>

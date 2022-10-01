@@ -1,24 +1,35 @@
-﻿namespace FilaBackend.Model
+﻿using FilaBackend.Interfaces;
+
+namespace FilaBackend.Model
 {
-    public class Ordenador
+    internal class Ordenador
     {
+        private readonly IConfiguracao _configuracao;
         private readonly PriorityQueue<Senha, long> _fila;
 
-        public Dictionary<string, int> ContTipos { get; set; } = new();
+        private Dictionary<string, int> ContTipos { get; set; } = new();
 
-        public Ordenador(PriorityQueue<Senha, long> fila)
+        internal Ordenador(PriorityQueue<Senha, long> fila, IConfiguracao configuracao)
         {
+            _configuracao = configuracao;
             _fila = fila;
         }
 
-        public long AplicarFatorCorrecao(Senha senhaParaCorrecao, int totalSenhasFila)
+        internal string AplicarOrdenacao(Senha senha)
         {
-            var tipoSenha = senhaParaCorrecao.GetType().Name;
-            var correcao = _fila.Count >= totalSenhasFila ? (double)_fila.UnorderedItems.Count(t => t.Element.GetType().Name == tipoSenha) / _fila.Count : 1;
-            return correcao >= 0.8 ? senhaParaCorrecao.Prioridade / 2 : senhaParaCorrecao.Prioridade;
+            senha.Numero = NumerarSenhas(senha);
+            _fila.Enqueue(senha, AplicarFatorCorrecao(senha));
+            return senha.ToString();
         }
 
-        public int NumerarSenhas(Senha senhaParaSerNumerada, int numInicial)
+        private long AplicarFatorCorrecao(Senha senhaParaCorrecao)
+        {
+            var tipoSenha = senhaParaCorrecao.GetType().Name;
+            var correcao = _fila.Count >= _configuracao.NumSenhas ? (double)_fila.UnorderedItems.Count(t => t.Element.GetType().Name == tipoSenha) / _fila.Count : 1;
+            return correcao >= _configuracao.PorcMesmoTipo && _configuracao.FatorCorrecao ? senhaParaCorrecao.Prioridade / 2 : senhaParaCorrecao.Prioridade;
+        }
+
+        private int NumerarSenhas(Senha senhaParaSerNumerada)
         {
             string tipoSenha = senhaParaSerNumerada.GetType().Name;
             if (ContTipos.ContainsKey(tipoSenha))
@@ -27,9 +38,10 @@
             }
             else
             {
-                ContTipos.Add(tipoSenha, numInicial);
+                ContTipos.Add(tipoSenha, _configuracao.NumInicial);
             }
             return ContTipos[tipoSenha];
         }
     }
+
 }
