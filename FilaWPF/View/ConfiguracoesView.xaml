@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="FilaWPF.View.ConfiguracoesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FilaWPF.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="1024" d:DesignWidth="1440">
+    <Grid Width="Auto">
+        <Border Style="{StaticResource BorderGridConfig}">
+            <StackPanel>
+                <StackPanel HorizontalAlignment="Center" Margin="0 30 0 0">
+                    <TextBlock Text="Configurações" Style="{StaticResource TextConfigTitleStyle}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                    <TextBlock Text="Iniciar senhas a partir do número:" Style="{StaticResource TextConfigStyle}"/>
+                    <TextBox Style="{StaticResource TextBoxConfigStyle}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Deseja ativar Fator de Correção?:" Style="{StaticResource TextConfigStyle}"/>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="50 0 0 0">
+                        <RadioButton Style="{StaticResource RadioButtonConfigStyle}">
+                            <RadioButton.Content>
+                                <TextBlock Text="Sim" Style="{StaticResource TextConfigRadioButtonStyle}"/>
+                            </RadioButton.Content>
+                        </RadioButton>
+                        <RadioButton Style="{DynamicResource RadioButtonConfigStyle}" Margin="100 0 0 0">
+                        <RadioButton.Content>
+                                <TextBlock Text="Não" Style="{StaticResource TextConfigRadioButtonStyle}"/>
+                        </RadioButton.Content>
+                    </RadioButton>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Número de senhas aguardando na fila:" Style="{StaticResource SubTextConfigStyle}"/>
+                    <TextBox Style="{StaticResource TextBoxConfigStyle}" Margin="120 0 0 0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Porcentagem de senhas do mesmo tipo:" Style="{StaticResource SubTextConfigStyle}"/>
+                    <TextBox Style="{StaticResource TextBoxConfigStyle}" Margin="100 0 0 0"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>
