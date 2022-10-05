@@ -9,12 +9,12 @@
         <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" ClipToBounds="True">
             <Menu>
                 <MenuItem Header="_Menu" Style="{StaticResource MenuItemStyle}" Background="{StaticResource Vermelho}" Margin="10 0 0 0">
-                        <MenuItem Header="_Retirada" Command="{Binding SelectViewModelCommand}" CommandParameter="{Binding RetiradaSenhaViewModel}" FontSize="15"/>
+                    <MenuItem Header="_Retirada" Command="{Binding SelectViewModelCommand}" CommandParameter="{Binding RetiradaSenhaViewModel}" FontSize="15"/>
                     <MenuItem Header="_Chamada" Command="{Binding SelectViewModelCommand}" CommandParameter="{Binding ChamadaSenhaViewModel}" FontSize="15"/>
-                    </MenuItem>
+                </MenuItem>
             </Menu>
             <Menu VerticalAlignment="Center" HorizontalAlignment="Right">
-                <MenuItem Header="_Configurações" Style="{StaticResource MenuItemStyle}" Background="{StaticResource VermelhoEscuro}" Margin="0 0 10 0"/>
+                <MenuItem Header="_Configurações" Command="{Binding SelectViewModelCommand}" CommandParameter="{Binding ConfiguracaoViewModel}" Style="{StaticResource MenuItemStyle}" Background="{StaticResource VermelhoEscuro}" Margin="0 0 10 0"/>
             </Menu>
         </Grid>
     </Border>

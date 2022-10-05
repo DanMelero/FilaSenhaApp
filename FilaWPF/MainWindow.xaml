@@ -15,8 +15,8 @@
         <DataTemplate DataType="{x:Type viewModel:RetiradaSenhaViewModel}">
             <view:RetiradaSenhaView/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type controls:MenuControl}">
-            <view:RetiradaSenhaView/>
+        <DataTemplate DataType="{x:Type viewModel:ConfiguracaoViewModel}">
+            <view:ConfiguracoesView/>
         </DataTemplate>
     </Window.Resources>
     <Grid Margin="3 0">

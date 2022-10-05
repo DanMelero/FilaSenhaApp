@@ -27,7 +27,7 @@ namespace FilaWPF.ViewModel
             _configuracao.NumInicial = NumInicial;
             _configuracao.FatorCorrecao = FatorCorrecao;
             _configuracao.NumSenhas = NumSenhas;
-            _configuracao.NumInicial = NumInicial;
+            _configuracao.PorcMesmoTipo = PorcentagemMesmoTipo;
         }
     }
 }

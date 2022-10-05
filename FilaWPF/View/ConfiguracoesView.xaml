@@ -6,40 +6,50 @@
              xmlns:local="clr-namespace:FilaWPF.View"
              mc:Ignorable="d" 
              d:DesignHeight="1024" d:DesignWidth="1440">
-    <Grid Width="Auto">
-        <Border Style="{StaticResource BorderGridConfig}">
-            <StackPanel>
-                <StackPanel HorizontalAlignment="Center" Margin="0 30 0 0">
-                    <TextBlock Text="Configurações" Style="{StaticResource TextConfigTitleStyle}"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Center">
-                    <TextBlock Text="Iniciar senhas a partir do número:" Style="{StaticResource TextConfigStyle}"/>
-                    <TextBox Style="{StaticResource TextBoxConfigStyle}"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Deseja ativar Fator de Correção?:" Style="{StaticResource TextConfigStyle}"/>
-                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="50 0 0 0">
-                        <RadioButton Style="{StaticResource RadioButtonConfigStyle}">
-                            <RadioButton.Content>
-                                <TextBlock Text="Sim" Style="{StaticResource TextConfigRadioButtonStyle}"/>
-                            </RadioButton.Content>
-                        </RadioButton>
-                        <RadioButton Style="{DynamicResource RadioButtonConfigStyle}" Margin="100 0 0 0">
-                        <RadioButton.Content>
-                                <TextBlock Text="Não" Style="{StaticResource TextConfigRadioButtonStyle}"/>
-                        </RadioButton.Content>
-                    </RadioButton>
+    <Grid x:Name="GeneralBlankBkg" Width="Auto" Background="Transparent" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="900"/>
+        </Grid.RowDefinitions>
+        <Grid Background="{StaticResource GradienteVerdeAquaBranco}" Grid.Row="1">
+            <Image Grid.Row="0" Width="200" HorizontalAlignment="Right" Margin="0 0 200 0">
+                <Image.Source>
+                    <BitmapImage DecodePixelWidth="200" UriSource="D:\VisualStudio Projects\FilaSenhaApp\FilaWPF\Images\BackgroundIllustration.png"/>
+                </Image.Source>
+            </Image>
+            <Border Grid.Row="1" Width="1400" CornerRadius="10" Background="Transparent">
+                <StackPanel>
+                    <StackPanel HorizontalAlignment="Center" Margin="0 30 0 0">
+                        <TextBlock Text="Configurações" Style="{StaticResource TextConfigTitleStyle}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                        <TextBlock Text="Iniciar senhas a partir do número:" Style="{StaticResource TextConfigStyle}"/>
+                        <TextBox Style="{StaticResource TextBoxConfigStyle}" Text="{Binding NumInicial}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Deseja ativar Fator de Correção?:" Style="{StaticResource TextConfigStyle}"/>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="50 0 0 0">
+                            <CheckBox Style="{DynamicResource CheckBoxConfigStyle}" IsChecked="{Binding FatorCorrecao, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="55" Width="55"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Número de senhas aguardando na fila:" Style="{StaticResource SubTextConfigStyle}"/>
+                        <TextBox Style="{StaticResource TextBoxConfigStyle}" Text="{Binding NumSenhas}" Margin="120 0 0 0"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Porcentagem de senhas do mesmo tipo:" Style="{StaticResource SubTextConfigStyle}"/>
+                        <TextBox Style="{StaticResource TextBoxConfigStyle}" Text="{Binding PorcentagemMesmoTipo}" Margin="100 0 0 0"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 80 400 0">
+                        <Border Style="{StaticResource BorderButtonConfigStyle}" Background="{StaticResource VermelhoCarmim}" Margin="0 0 50 0">
+                            <Button Content="Salvar" Command="{Binding SalvarCommand}" Style="{StaticResource ButtonConfigStyle}"/>
+                        </Border>
+                        <Border Style="{StaticResource BorderButtonConfigStyle}" Background="{StaticResource VerdeAquamarine}"  Margin="50 0 0 0">
+                            <Button Content="Cancelar" Style="{StaticResource ButtonConfigStyle}" Command="{Binding SalvarCommand}"/>
+                        </Border>
                     </StackPanel>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Número de senhas aguardando na fila:" Style="{StaticResource SubTextConfigStyle}"/>
-                    <TextBox Style="{StaticResource TextBoxConfigStyle}" Margin="120 0 0 0"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Porcentagem de senhas do mesmo tipo:" Style="{StaticResource SubTextConfigStyle}"/>
-                    <TextBox Style="{StaticResource TextBoxConfigStyle}" Margin="100 0 0 0"/>
-                </StackPanel>
-            </StackPanel>
-        </Border>
+            </Border>
+        </Grid>
     </Grid>
 </UserControl>
