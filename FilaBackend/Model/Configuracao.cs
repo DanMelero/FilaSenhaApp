@@ -4,16 +4,10 @@ namespace FilaBackend.Model
 {
     public class Configuracao : IConfiguracao
     {
-        private double _porcMesmoTipo;
         public int NumInicial { get; set; }
         public bool FatorCorrecao { get; set; }
         public int NumSenhas { get; set; }
-
-        public double PorcMesmoTipo
-        {
-            get { return _porcMesmoTipo/100; }
-            set { _porcMesmoTipo = value; } 
-        }
+        public double PorcMesmoTipo { get; set; }
 
         public Configuracao(int numInicial, bool fatorCorrecao, int numSenhas, double porcMesmoTipo)
         {
@@ -26,7 +20,7 @@ namespace FilaBackend.Model
         public Configuracao()
         {
             NumInicial = 1;
-            FatorCorrecao = false;
+            FatorCorrecao = true;
             NumSenhas = 15;
             PorcMesmoTipo = 80;
         }
