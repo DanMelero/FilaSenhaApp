@@ -32,12 +32,8 @@
             </StackPanel>
         </Border>
         <StackPanel Style="{StaticResource StackPanelButtonsRetiradaStyle}">
-            <Border Style="{StaticResource BorderButtonRetiradaStyle}" Background="{StaticResource Branco}" Margin="0 0 150 0">
-                <Button x:Name="btnSenhaRegular" Command="{Binding RetirarRegularCommand}" Style="{StaticResource ButtonRetiradaStyle}" Content="Regular" Foreground="{StaticResource AzulMarinhoPiscina}"/>
-            </Border>
-            <Border Style="{StaticResource BorderButtonRetiradaStyle}" Background="{StaticResource GradienteAzuleBranco}" Margin="150 0 0 0">
-                <Button x:Name="btnSenhaPreferencial" Command= "{Binding RetirarPreferencialCommand}" Style="{StaticResource ButtonRetiradaStyle}" Content="Preferencial" Foreground="{StaticResource Vermelho}"/>
-            </Border>
+                <Button Template="{DynamicResource ButtonTemplateConfig}" Command="{Binding RetirarRegularCommand}" Style="{StaticResource ButtonRetiradaStyle}" Content="Regular" Background="{StaticResource Branco}" Foreground="{StaticResource AzulMarinhoPiscina}" Padding="80 40 80 40"/>
+            <Button Template="{DynamicResource ButtonTemplateConfig}" Style="{StaticResource ButtonRetiradaStyle}" Command="{Binding RetirarPreferencialCommand}"  Content="Preferencial" Background="{StaticResource GradienteAzuleBranco}" Foreground="{StaticResource Vermelho}"/>
         </StackPanel>
     </Grid>
 </UserControl>

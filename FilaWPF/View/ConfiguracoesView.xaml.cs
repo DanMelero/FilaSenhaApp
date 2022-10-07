@@ -1,5 +1,4 @@
-﻿using FilaWPF.ViewModel;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 
 namespace FilaWPF.View
@@ -9,6 +8,16 @@ namespace FilaWPF.View
         public ConfiguracoesView()
         {
             InitializeComponent();
+        }
+
+        private void Salvar_Click(object sender, RoutedEventArgs e)
+        {
+            StackPanelMsgSaved.Visibility = Visibility.Visible;
+        }
+
+        private void Cancelar_Click(object sender, RoutedEventArgs e)
+        {
+            StackPanelMsgSaved.Visibility = Visibility.Collapsed;
         }
     }
 }

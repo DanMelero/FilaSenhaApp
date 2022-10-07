@@ -25,7 +25,7 @@ namespace FilaBackend.Model
         private long AplicarFatorCorrecao(Senha senhaParaCorrecao)
         {
             var tipoSenha = senhaParaCorrecao.GetType().Name;
-            var correcao = _fila.Count >= _configuracao.NumSenhas ? (double)_fila.UnorderedItems.Count(t => t.Element.GetType().Name == tipoSenha) / _fila.Count : 1;
+            var correcao = _fila.Count >= _configuracao.NumSenhas ? (double)_fila.UnorderedItems.Count(t => t.Element.GetType().Name != tipoSenha) / _fila.Count : 1;
             return correcao >= _configuracao.PorcMesmoTipo/100 && _configuracao.FatorCorrecao ? senhaParaCorrecao.Prioridade / 2 : senhaParaCorrecao.Prioridade;
         }
 

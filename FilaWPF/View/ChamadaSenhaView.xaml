@@ -18,8 +18,6 @@
                     <TextBlock Text="{Binding TamanhoFila}" Style="{StaticResource TextBkgSideStyle}" Foreground="{StaticResource VermelhoCarmim}"  FontWeight="DemiBold"/>
                 </StackPanel>
             </Border>
-           
-
         </Grid>
         <Grid x:Name="bkg_Central" Grid.Column="1" VerticalAlignment="Stretch" Background="{StaticResource Branco}">
             <Image Width="200" HorizontalAlignment="Right" Margin="0 0 60 0">
@@ -35,9 +33,7 @@
             </Border>
 
             <StackPanel VerticalAlignment="Bottom">
-                <Border Style="{StaticResource BorderBaseStyle}" Margin="100 0 100 50" Padding="20" Background="{StaticResource Lilas}" CornerRadius="55">
-                    <Button x:Name="btnSenha" Style="{StaticResource ButtonProxSenha}" Command="{Binding AtivarProxSenhaCommand}" Content="Chamar Próxima Senha"/>
-                </Border>
+                <Button Template="{DynamicResource ButtonTemplateConfig}" Padding="20" Style="{StaticResource ButtonProxSenha}" Command="{Binding AtivarProxSenhaCommand}"  Background="{StaticResource Lilas}" Margin="30 0 30 60" Content="Chamar Próxima Senha"/>
             </StackPanel>
         </Grid>
 

@@ -33,15 +33,16 @@
         <Setter Property="Background" Value="{StaticResource Vermelho}"/>
     </Style>
 
-    <Style x:Key="BorderButtonRetiradaStyle" TargetType="Border" BasedOn="{StaticResource BorderBaseStyle}">
-        <Setter Property="Padding" Value="80 50"/>
-        <Setter Property="Padding" Value="100 40"/>
+    <Style x:Key="BorderMsgSuccessConfigStyle" TargetType="Border">
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Vermelho}"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Margin" Value="300 30 0 0"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Background" Value="AliceBlue"/>
+        <Setter Property="Padding" Value="10"/>
     </Style>
-
-    <Style x:Key="BorderButtonConfigStyle" TargetType="Border" BasedOn="{StaticResource BorderBaseStyle}">
-        <Setter Property="CornerRadius" Value="20"/>
-        <Setter Property="Width" Value="274"/>
-    </Style>
+    
     <!--#endregion-->
 
     <!--#region TextBlocks -->
@@ -94,6 +95,14 @@
         <Setter Property="FontFamily" Value="Roboto"/>
         <Setter Property="Margin" Value="100 0 0 0"/>
     </Style>
+
+    <Style x:Key="TextMsgSuccessConfigStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="25"/>
+        <Setter Property="FontFamily" Value="Inter"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="FontWeight" Value="DemiBold"/>
+        <Setter Property="Foreground" Value="{StaticResource VermelhoCarmim}"/>
+    </Style>
     <!--#endregion-->
 
     <!--#region TextBoxes -->
@@ -137,7 +146,11 @@
     <!--#region Buttons -->
     <Style x:Key="ButtonGeralStyle" TargetType="Button">
         <Setter Property="VerticalAlignment" Value="Bottom"/>
-        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect BlurRadius="8" ShadowDepth="3" Direction="-100"/>
+            </Setter.Value>
+        </Setter>
     </Style>
 
     <Style x:Key="ButtonProxSenha" TargetType="Button" BasedOn="{StaticResource ButtonGeralStyle}">
@@ -152,7 +165,9 @@
         <Setter Property="FontSize" Value="45"/>
         <Setter Property="FontWeight" Value="Medium"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
-        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Padding" Value="40"/>
+        <Setter Property="Margin" Value="150 0 150 0"/>
+        
     </Style>
 
     <Style x:Key="ButtonConfigStyle" TargetType="Button" BasedOn="{StaticResource ButtonGeralStyle}">
@@ -160,8 +175,47 @@
         <Setter Property="FontSize" Value="40"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="FontFamily" Value="Inter"/>
-        <Setter Property="Padding" Value="40 15"/>
+        <Setter Property="Padding" Value="30"/>
     </Style>
+
+    <Style x:Key="ButtonBorderStyle" TargetType="Button" BasedOn="{StaticResource BorderBaseStyle}">
+        <Setter Property="Padding" Value="80 50"/>
+        <Setter Property="Padding" Value="100 40"/>
+    </Style>
+
+    <!--#region ButtonTemplate -->
+    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConv"/>
+    <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+    <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+    <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+    <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+    <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+    <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+    <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+    <ControlTemplate x:Key="ButtonTemplateConfig" TargetType="{x:Type ButtonBase}">
+        <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true" CornerRadius="20">
+            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="Button.IsDefaulted" Value="true">
+                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <!--#endregion-->
     <!--#endregion-->
 
     <!--#region MenuItem -->
@@ -568,5 +622,6 @@
         </Setter>
     </Style>
     <!--#endregion-->
+    
     
 </ResourceDictionary>

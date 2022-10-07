@@ -8,7 +8,7 @@
     <SolidColorBrush x:Key="Vermelho" Color="#E6473F"/>
     <SolidColorBrush x:Key="VermelhoEscuro" Color="#BB223D"/>
     <SolidColorBrush x:Key="VerdeAquamarine" Color="#71CBC4"/>
-    <SolidColorBrush x:Key="Lilas" Color="#FF615CF2"/>
+    <SolidColorBrush x:Key="Lilas" Color="#CC615CF2"/>
     <SolidColorBrush x:Key="VerdeMusgo" Color="#CDD56E"/>
     <SolidColorBrush x:Key="AzulMarinhoPiscina" Color="#2668A6"/>
     <SolidColorBrush x:Key="AzulMarinhoPiscinaTransparente" Color="#BB2668A6"/>
